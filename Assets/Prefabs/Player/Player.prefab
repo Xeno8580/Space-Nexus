@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6821487730751621322}
   - component: {fileID: 7014261050294095225}
   - component: {fileID: 9066727765626638192}
+  - component: {fileID: 7263290712897296393}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -218,3 +219,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAim
   mainCamera: {fileID: 0}
+--- !u!114 &7263290712897296393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468598139163064048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72859d0bd073bf747855d07330c385c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerFire
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  shootSpeed: 10

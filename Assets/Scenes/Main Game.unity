@@ -349,11 +349,11 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
-  m_Dithering: 0
+  m_Dithering: 1
   m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_AllowHDROutput: 1
@@ -515,6 +515,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1468598139163064048, guid: e6ac43d77c94ba842be2b583691746a5, type: 3}
   m_PrefabInstance: {fileID: 1316691238090949961}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &622108977 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4501802357325003375, guid: e6ac43d77c94ba842be2b583691746a5, type: 3}
+  m_PrefabInstance: {fileID: 1316691238090949961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &693034907
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +660,7 @@ GameObject:
   - component: {fileID: 908909664}
   - component: {fileID: 908909663}
   - component: {fileID: 908909662}
+  - component: {fileID: 908909666}
   m_Layer: 0
   m_Name: PlayerProjectile
   m_TagString: Untagged
@@ -755,6 +761,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &908909666
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908909661}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &1912847937
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +952,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7263290712897296393, guid: e6ac43d77c94ba842be2b583691746a5, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 622108977}
+    - target: {fileID: 7263290712897296393, guid: e6ac43d77c94ba842be2b583691746a5, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 908909661}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
