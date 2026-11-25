@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 7014261050294095225}
   - component: {fileID: 9066727765626638192}
   - component: {fileID: 7263290712897296393}
+  - component: {fileID: 7688277934250514948}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,6 +232,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72859d0bd073bf747855d07330c385c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFire
-  projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 0}
+  projectilePrefab: {fileID: 1191419636066215110, guid: c54bbfd7f0a8d1542a6c95f3cc5a8d3e, type: 3}
+  firePoint: {fileID: 4501802357325003375}
   shootSpeed: 10
+--- !u!114 &7688277934250514948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468598139163064048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a333e3a656411fa4ebe32b505878bf94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 100
+  currentHealth: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
