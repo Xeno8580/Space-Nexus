@@ -2,29 +2,29 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
 {
-
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float shootSpeed = 10f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private float fireCooldown = 0.25f; // seconds between shots
+
+    private float nextFireTime;
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
             Shoot();
+            nextFireTime = Time.time + fireCooldown;
         }
     }
 
-    // Update is called once per frame
     void Shoot()
     {
         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
-
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            
             rb.linearVelocity = firePoint.forward * shootSpeed;
         }
 
