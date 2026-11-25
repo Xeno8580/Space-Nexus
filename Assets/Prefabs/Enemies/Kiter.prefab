@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 7919745710551089385}
   - component: {fileID: 2613083635302125522}
   - component: {fileID: 3482958178474818203}
+  - component: {fileID: 6932229803487702298}
+  - component: {fileID: 1386872542687112560}
   m_Layer: 10
-  m_Name: Enemy1
+  m_Name: Kiter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,3 +132,52 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6932229803487702298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975641287461070311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865e50203c7c6b34e8f98b50432ff421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Kiter
+  moveSpeed: 3
+  preferredDistance: 7
+  distanceTolerance: 1.5
+  strafeSpeed: 2
+  projectilePrefab: {fileID: 7677333187139554711, guid: 8b9c0344572493d498ab324b2c455675, type: 3}
+  firePoint: {fileID: 1856102842441001031}
+  projectileSpeed: 10
+  fireInterval: 1.5
+  shootRange: 12
+  aimInaccuracy: 5
+--- !u!54 &1386872542687112560
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975641287461070311}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
