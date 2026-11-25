@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public InputAction MoveAction;
     private Vector2 moveInput;
 
-    public float speed = 5f;
+    [SerializeField] public float speed = 5f;
 
     void Start()
     {
