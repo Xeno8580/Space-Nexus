@@ -2,27 +2,41 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-
     public int damage = 10;
     public string targetTag = "Enemy";
     public float lifetime = 5f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    Transform shooter;
+    Vector3 launchDir;
+
+    public void Launch(Vector3 dir, float speed, float range, Transform shooterTransform)
+    {
+        launchDir = dir;
+        shooter = shooterTransform;
+        lifetime = range / speed; 
+        GetComponent<Rigidbody>().linearVelocity = dir * speed; 
+    }
+
     void Start() => Destroy(gameObject, lifetime);
 
-    // Update is called once per frame
+    void Update()
+    {
+        if (shooter && Vector3.Dot(transform.position - shooter.position, launchDir) < -0.1f)
+            Destroy(gameObject);
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"Hit: {other.name} | tag: {other.tag} | layer: {LayerMask.LayerToName(other.gameObject.layer)}");
-        
-        if (other.CompareTag(targetTag) && other.TryGetComponent(out Health health))
+        if (other.GetComponentInParent<Projectile>() != null) return; 
+        Health health = other.GetComponentInParent<Health>();
+        if (health != null && health.CompareTag(targetTag))
         {
             health.TakeDamage(damage);
             Destroy(gameObject);
         }
-        else if (!other.isTrigger && !other.CompareTag("Player") && !other.CompareTag("Enemy"))
+        else if (!other.isTrigger && health == null)
         {
             Destroy(gameObject);
         }
     }
-    
 }
